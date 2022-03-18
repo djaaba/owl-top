@@ -16,5 +16,5 @@ export const AppContextProvider = ({menu, firstCategory, children}: PropsWithChi
 		setMenuState(newMenu);
 	}
 
-	return <AppContext.Provider value = {{ menu: menuState, firstCategory }}> { children } </AppContext.Provider>;
+	return <AppContext.Provider value = {{ menu: menuState, firstCategory, setMenu }}> { children } </AppContext.Provider>;
 } 
