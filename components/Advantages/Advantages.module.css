@@ -1,0 +1,31 @@
+.advantage {
+	margin-bottom: 42px;
+}
+
+.advantage:last-child{
+	margin-bottom: 0;
+}
+
+.container{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.icon{
+	margin-right: 40px;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
+	
+	color: var(--black);
+}
+
+.description {
+	border-left: 2px solid #D2D2D2;
+	padding-left: 68px;
+	margin-left: 25px;
+}

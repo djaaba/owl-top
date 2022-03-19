@@ -3,8 +3,7 @@ import { LayoutProps } from "./Layout.props";
 import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { Sidebar } from "./Sidebar/Sidebar";
-import { Component, FunctionComponent } from 'react';
-import cn from 'classnames';
+import { FunctionComponent } from 'react';
 import { AppContextProvider, IAppContext } from '../context/app.context';
 
 const Layout = ({children}: LayoutProps): JSX.Element => {

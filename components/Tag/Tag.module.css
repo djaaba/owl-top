@@ -5,6 +5,11 @@
 
 	/* margin-right: 5px; */
 	border-radius: 20px;
+	margin-right: 10px;
+}
+
+.tag:last-child{
+	margin-right: 0;
 }
 
 .small{

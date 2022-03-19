@@ -1,22 +1,11 @@
 import styles from "./Menu.module.css";
 import cn from "classnames";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../context/app.context";
 import { FirstLevelMenuItem, PageItem } from "../../interfaces/menu.interface";
-import CoursesIcon from "./icons/hat.svg";
-import ServicesIcon from "./icons/cloud.svg";
-import BooksIcon from "./icons/book.svg";
-import ProductsIcon from "./icons/box.svg";
-import { TopLevelCategory } from "../../interfaces/page.interface";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-const firstLevelMenu: FirstLevelMenuItem[] = [
-	{ route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
-	{ route: 'services', name: 'Сервисы', icon: <ServicesIcon />, id: TopLevelCategory.Services },
-	{ route: 'books', name: 'Книги', icon: <BooksIcon />, id: TopLevelCategory.Books },
-	{ route: 'products', name: 'Продукты', icon: <ProductsIcon />, id: TopLevelCategory.Products }
-];
+import { firstLevelMenu } from "../../helpers/helpers";
 
 export const Menu = (): JSX.Element => {
 	const { menu, setMenu, firstCategory } = useContext(AppContext);
@@ -76,8 +65,9 @@ export const Menu = (): JSX.Element => {
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return (
 			pages.map(p => (
+				// p.category.toString() is disabling the error in console
 				// eslint-disable-next-line react/jsx-key
-				<Link href={`/${route}/${p.alias}`}>
+				<Link key={p.category.toString()} href={`/${route}/${p.alias}`}>
 					<a className={cn(styles.thirdLevel, {
 						[styles.thirdLevelActive]: `/${route}/${p.alias}` == router.asPath
 					})}>
