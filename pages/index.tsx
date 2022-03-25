@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { Htag, Button, Ptag, Tag, Rating } from '../components';
+import { Htag, Button, Ptag, Tag, Rating, Input, Search } from '../components';
 import { withLayout } from '../Layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 import { GetStaticProps } from 'next';
+import { TextArea } from '../components/TextArea/TextArea';
 
 function Home({ menu }: HomeProps): JSX.Element{
   const [counter, setCounter] = useState<number>(0);
@@ -33,6 +34,9 @@ function Home({ menu }: HomeProps): JSX.Element{
       <Tag size='s' color='primary'>Работа в Photoshop</Tag>
       <Tag size='m' color='red'>hh.ru</Tag>
       <Rating rating={rating} isEditable setRating={setRating}/>
+      <Input placeholder='Имя'/>
+      <TextArea placeholder='Текст отзыва'/>
+      <Search/>
     </>
   );
 }
