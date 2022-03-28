@@ -1,10 +1,11 @@
 import { RatingProps } from './Rating.props';
 import styles from './Rating.module.css';
-import { useEffect, useState } from 'react';
+import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 import StarIcon from './star.svg'
 import cn from 'classnames';
 
-export const Rating = ({isEditable = false, rating, setRating, ...props}: RatingProps): JSX.Element => {
+// eslint-disable-next-line react/display-name
+export const Rating = forwardRef(({isEditable = false, rating, error, setRating, ...props}: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 	const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
 	useEffect(() => {
@@ -43,8 +44,9 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}: Rating
 	}
 
 	return (
-		<div {...props}>
+		<div className={styles.ratingWrapper} {...props} ref={ref}>
 			{ratingArray.map((r, i) => (<span key = {i}>{r}</span>))}
+			{ error && <span className={styles.errorMessage}>{error.message}</span> }
 		</div>
 	);
-};
+});

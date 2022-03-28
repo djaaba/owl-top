@@ -7,3 +7,18 @@
 .filled{
 	fill: var(--primary);
 }
+
+.error{
+	border: 1px solid var(--red);
+}
+
+.errorMessage{
+	position: absolute;
+	bottom: -15px;
+	left: 1px;
+	color: var(--red);
+}
+
+.ratingWrapper{
+	position: relative;
+}
