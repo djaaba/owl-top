@@ -154,11 +154,12 @@
 	padding: 30px;
 }
 
-.reviews{
-}
-
 .characteristicsValue{
 	white-space: nowrap;
+}
+
+.rateTitle a{
+	color: var(--primary);
 }
 
 @media screen and (max-width: 1320px) {
@@ -243,7 +244,6 @@
 	}
 }
 
-
 @media screen and (max-width: 640px) {
 	.product {
 		grid-template-columns: 
@@ -275,7 +275,6 @@
 		margin-bottom: 10px;
 	}
 }
-
 
 @media screen and (max-width: 480px) {
 	.product {
