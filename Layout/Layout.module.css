@@ -12,7 +12,6 @@
 }
 
 .header{
-	display: none;
 	grid-area: header;
 }
 
@@ -35,8 +34,6 @@
 		"header"
 		"body"
 		"footer";
-	}
-	.header{
-		display: block;
+		gap: 10px;
 	}
 }
