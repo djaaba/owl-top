@@ -1,24 +1,26 @@
-.star{
+.star {
 	margin-right: 5px;
 	fill: var(--gray);
+
 	cursor: pointer;
 }
 
-.filled{
+.filled {
 	fill: var(--primary);
 }
 
-.error{
+.error {
 	border: 1px solid var(--red);
 }
 
-.errorMessage{
+.errorMessage {
 	position: absolute;
 	bottom: -15px;
 	left: 1px;
+
 	color: var(--red);
 }
 
-.ratingWrapper{
+.ratingWrapper {
 	position: relative;
 }

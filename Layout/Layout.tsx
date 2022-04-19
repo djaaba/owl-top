@@ -29,7 +29,6 @@ export const withLayout = <T extends Record<string, unknown>&IAppContext>(Compon
 					<Component { ...props } />
 				</Layout>
 			</AppContextProvider>
-			
 		);
 	};
 };

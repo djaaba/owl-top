@@ -1,17 +1,20 @@
-.up{
+.up {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+
 	width: 40px;
 	height: 40px;
 
-	background: var(--primary);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-	border-radius: 10px;
-	bottom: 10px;
-	right: 10px;
-	border: 1px solid var(--gray);
 	cursor: pointer;
-	position: fixed;
+
+	border: 1px solid var(--gray);
+	border-radius: 10px;
+
+	background: var(--primary);
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
 }
 
-.up:hover{
+.up:hover {
 	background: var(--primary-hover);
 }

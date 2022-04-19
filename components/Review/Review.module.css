@@ -1,4 +1,4 @@
-.review{
+.review {
 	display: grid;
 	grid-template-columns: [start] auto 1fr auto auto [end];
 
@@ -9,26 +9,28 @@
 	line-height: 24px;
 }
 
-.description{
+.description {
 	grid-column: start / end;
 }
 
-.date{
+.date {
 	margin-right: 10px;
 }
 
-.name{
+.name {
 	font-weight: bold;
 }
 
-@media screen and (max-width: 640px){
-	.review{
+@media screen and (max-width: 640px) {
+	.review {
 		grid-template-columns: [start] 30px [titlestart] auto [dateend] 1fr [end];
 	}
-	.title{
+
+	.title {
 		grid-column: titlestart / end;
 	}
-	.date{
+
+	.date {
 		grid-column: start / dateend;
 	}
 }

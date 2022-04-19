@@ -1,30 +1,33 @@
-.sortIcon{
+.sortIcon {
 	display: none;
 }
 
-.active{
+.active {
+	color: var(--primary);
+
 	font-weight: bold;
-	color: var(--primary)
 }
 
-.active .sortIcon{
+.active .sortIcon {
 	display: block;
+
 	margin-right: 8px;
 }
 
-.sort{
+.sort {
 	display: flex;
-	width: 240px;
 	justify-content: space-between;
+
+	width: 240px;
 
 	cursor: pointer;
 }
 
-.sort span{
+.sort span {
 	display: flex;
 	align-items: center;
 }
 
-.span{
+.span {
 	margin-right: 8px;
 }
