@@ -6,6 +6,10 @@
 	"plugins": [
 		"stylelint-order"
 	],
+	"ignoreShorthands": [
+		"/grid/", "/grid-template/", "/grid-area/"
+	],
+	"ignorePattern": "kebab-case",
 	"rules": {
 		"indentation": [
 			"tab"

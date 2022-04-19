@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    loader: 'imgix',
+    path: "https://noop/",
     domains: ['courses-top.ru']
   },
   webpack(config){

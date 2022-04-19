@@ -15,7 +15,7 @@ import { motion } from 'framer-motion';
 
 // eslint-disable-next-line react/display-name
 export const Product = motion(forwardRef(({product, className, ...props}: ProductProps, ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
-	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
+	const [isReviewOpened, setIsReviewOpened] =	 useState<boolean>(false);
 	const reviewRef = useRef<HTMLDivElement>(null);
 
 	const variants = {
@@ -43,8 +43,8 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
 					/>
 				</div>
 				<div className={styles.title}>{product.title}</div>
-				<div className={styles.price}>{priceRu(product.price)}</div>
-				<div className={styles.credit}>{priceRu(product.credit)}</div>
+				<div className={styles.price}>{product.price? priceRu(product.price): "Нет цены"}</div>
+				<div className={styles.credit}>{product.credit? priceRu(product.credit): "Нет цены"}</div>
 				<div className={styles.rating}><Rating rating={product.reviewAvg ?? product.initialRating}/></div>
 				<div className={styles.tags}>{product.categories.map(c=><Tag color='ghost' key={c}>{c}</Tag>)} </div>
 				<div className={styles.priceTitle}>цена</div>
