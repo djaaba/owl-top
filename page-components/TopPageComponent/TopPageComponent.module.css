@@ -43,6 +43,9 @@
 	line-height: 27px;
 }
 
+.skills{
+	margin-top: 55px;
+}
 @media screen and (max-width: 640px) {
 	.title {
 		grid-template-columns: auto 1fr;

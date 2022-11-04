@@ -53,6 +53,8 @@
 	margin-bottom: 10px;
 
 	cursor: pointer;
+	
+	white-space: nowrap;
 
 	color: var(--gray-dark);
 

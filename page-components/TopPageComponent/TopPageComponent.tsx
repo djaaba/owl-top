@@ -25,14 +25,14 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 				{products && <Tag color='gray' size='m'>{products.length}</Tag>}
 				<Sort sort={sort} setSort={setSort}></Sort>
 			</div>
-			<div>
-				{sortedProducts && sortedProducts.map(p => (<Product layout key={p._id} product={p}/>))}
-			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>
 				<Tag color='red' size='m'>hh.ru</Tag>
 			</div>
 			{firstCategory == TopLevelCategory.Courses && page.hh && <HhData {...page.hh} />}
+			<div>
+				{sortedProducts && sortedProducts.map(p => (<Product layout key={p._id} product={p}/>))}
+			</div>
 			{page.advantages && page.advantages.length>0 && 
 			<>
 				<Htag tag='h2'>Преимущества</Htag>
@@ -40,8 +40,10 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 			</>
 			}
 			{page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText}}></div>}
-			<Htag tag='h2'>Получаемые навыки</Htag>
-			{page.tags.map(t => <Tag key={t} color='primary'>{t}</Tag>)}
+			<div className={styles.skills}>
+				<Htag tag='h2'>Получаемые навыки</Htag>
+				{page.tags.map(t => <Tag key={t} color='primary'>{t}</Tag>)}
+			</div>
 		</div>
 	);
 };

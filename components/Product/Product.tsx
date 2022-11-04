@@ -34,14 +34,15 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
 	return (
 		<div className={className} {...props} ref={ref}>
 			<Card className={styles.product}>
-				<div className={styles.logo}>
+				<img className={styles.logo} src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt="" />
+				{/* <div className={styles.logo}>
 					<Image 
 						src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
 						alt={product.title}
 						width={70}
 						height={70}
 					/>
-				</div>
+				</div> */}
 				<div className={styles.title}>{product.title}</div>
 				<div className={styles.price}>{product.price? priceRu(product.price): "Нет цены"}</div>
 				<div className={styles.credit}>{product.credit? priceRu(product.credit): "Нет цены"}</div>

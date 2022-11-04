@@ -1,6 +1,6 @@
 import styles from "./Menu.module.css";
 import cn from "classnames";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../../context/app.context";
 import { FirstLevelMenuItem, PageItem } from "../../interfaces/menu.interface";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export const Menu = (): JSX.Element => {
 			return m;
 		}));
 	};
-
+  
 	const variants = {
 		visible: {
 			marginBottom: 20,
