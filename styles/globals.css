@@ -20,6 +20,21 @@ a {
 	box-sizing: border-box;
 }
 
+li {
+    list-style-type: none; 
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0; 
+}
+
+button{
+	border: none; 
+	outline: none;
+	background-color: inherit;
+}
+
 :root {
 	--black: #3B434E;
 	--gray-dark: #787D85;

@@ -15,4 +15,11 @@
 
 	height: 30px;
 	padding: 0;
+
+	display: flex !important;
+    align-items: center !important;
+}
+
+.icon:focus{
+	background-color: var(--primary) !important;
 }

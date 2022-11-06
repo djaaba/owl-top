@@ -2,12 +2,19 @@ import { SortEnum, SortProps } from "./Sort.props";
 import styles from './Sort.module.css';
 import cn from 'classnames';
 import SortIcon from './sort.svg'
+import { useState, useEffect } from 'react';
 
 export const Sort = ({sort, setSort, className, ...props}: SortProps): JSX.Element => {
+	
+	
 	return (
 		<div className={cn(styles.sort, className)} {...props}>
 			<span
-				onClick={() => setSort(SortEnum.Rating)}
+				onClick={() => {
+					setSort(SortEnum.Rating)
+					// setSort(SortEnum.Rating, sortRating)
+					// props.setSortRating(true)
+				}}
 				className={cn({
 					[styles.active]: sort == SortEnum.Rating
 				})}
@@ -15,7 +22,11 @@ export const Sort = ({sort, setSort, className, ...props}: SortProps): JSX.Eleme
 				<SortIcon className={styles.sortIcon}/> По&nbsp;рейтингу
 			</span>
 			<span
-				onClick={() => setSort(SortEnum.Price)}
+				onClick={() => {
+					setSort(SortEnum.Price)
+					// setSort(SortEnum.Price, sortPrice);
+					// setSortPrice(true);
+				}}
 				className={cn({
 					[styles.active]: sort == SortEnum.Price
 				})}

@@ -18,7 +18,8 @@ export const Rating = forwardRef(({isEditable = false, rating, error, setRating,
 				// eslint-disable-next-line react/jsx-key
 				<StarIcon
 					className={cn(styles.star, {
-						[styles.filled]: i < currentRating
+						[styles.filled]: i < currentRating,
+						[styles.starEditable]: isEditable
 					})}
 					onMouseEnter={() => changeDisplay(i+1)}
 					onMouseLeave={() => changeDisplay(rating)}

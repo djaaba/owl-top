@@ -9,13 +9,12 @@ import { API } from '../helpers/api';
 
 function Home({ menu }: HomeProps): JSX.Element{
   useEffect(() => {
-    return function cleanup(){ // каждый раз когда выполняется эффект
+    return function cleanup(){ 
       console.log('unmount');
     }
   })
   return (
     <>
-      <Search/>
     </>
   );
 }

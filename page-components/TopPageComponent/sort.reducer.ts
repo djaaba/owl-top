@@ -12,9 +12,16 @@ export interface SortReducerState{
 export const sortReducer = (state: SortReducerState, action: SortActions): SortReducerState => {
 	switch(action.type){
 		case SortEnum.Rating:
+			// console.log(operation);
+			// if (operation){
+			// 	return{
+			// 		sort: SortEnum.Rating,
+			// 		products: state.products.sort((a,b) => a.initialRating > b.initialRating? -1 : 1)
+			// 	}
+			// }
 			return{
 				sort: SortEnum.Rating,
-				products: state.products.sort((a,b) => a.initialRating > b.initialRating? -1 : 1)
+				products: state.products.sort((a,b) => a.initialRating < b.initialRating? -1 : 1)
 			}
 		case SortEnum.Price:
 			return{

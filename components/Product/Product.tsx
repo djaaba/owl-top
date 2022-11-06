@@ -12,6 +12,7 @@ import { ForwardedRef, forwardRef, useRef, useState } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { motion } from 'framer-motion';
+import Link from "next/link";
 
 // eslint-disable-next-line react/display-name
 export const Product = motion(forwardRef(({product, className, ...props}: ProductProps, ref:ForwardedRef<HTMLDivElement>): JSX.Element => {
@@ -35,14 +36,6 @@ export const Product = motion(forwardRef(({product, className, ...props}: Produc
 		<div className={className} {...props} ref={ref}>
 			<Card className={styles.product}>
 				<img className={styles.logo} src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt="" />
-				{/* <div className={styles.logo}>
-					<Image 
-						src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
-						alt={product.title}
-						width={70}
-						height={70}
-					/>
-				</div> */}
 				<div className={styles.title}>{product.title}</div>
 				<div className={styles.price}>{product.price? priceRu(product.price): "Нет цены"}</div>
 				<div className={styles.credit}>{product.credit? priceRu(product.credit): "Нет цены"}</div>

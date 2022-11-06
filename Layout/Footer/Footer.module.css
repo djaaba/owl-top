@@ -1,7 +1,8 @@
 .footer {
 	display: grid;
 
-	padding: 25px 30px;
+	padding: 25px 60px;
+	margin-top: 35px;
 
 	color: var(--white);
 

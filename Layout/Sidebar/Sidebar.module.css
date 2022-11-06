@@ -5,6 +5,10 @@
 	grid-area: sidebar;
 }
 
+.logoLink{
+	cursor: pointer;
+}
+
 @media (max-width: 765px) {
 	.sidebar {
 		display: none !important;
