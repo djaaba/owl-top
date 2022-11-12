@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 
 export const Search = ({className, ...props}: SearchProps): JSX.Element => {
 	const [search, setSearch] = useState<string>('')
-
 	const router = useRouter();
 
 	const doSearch = () => {
@@ -36,7 +35,7 @@ export const Search = ({className, ...props}: SearchProps): JSX.Element => {
 			/>
 			<Button 
 				appearance='primary'
-				className={styles.button}
+				className={cn(styles.button, styles.padding0)}
 				onClick={doSearch}
 			>
 				<SearchIcon className={styles.icon}/>

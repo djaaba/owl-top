@@ -1,4 +1,8 @@
 .up {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	position: fixed;
 	right: 10px;
 	bottom: 10px;
@@ -8,7 +12,7 @@
 
 	cursor: pointer;
 
-	border: 1px solid var(--gray);
+	border: 2px solid var(--gray-light);
 	border-radius: 10px;
 
 	background: var(--primary);

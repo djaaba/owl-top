@@ -2,7 +2,7 @@ import { SortEnum } from "../../components/Sort/Sort.props";
 import { ProductModel } from "../../interfaces/product.interface";
 
 //type overkill конечно, но в дальнейшем для pre-load поучиться можно)
-export type SortActions = { type: SortEnum.Price} | { type: SortEnum.Rating} | {type: 'reset', initialState: ProductModel[] }
+export type SortActions = { type: SortEnum.PriceAscending} | { type: SortEnum.RatingAscending} | { type: SortEnum.Price} | { type: SortEnum.Rating} | {type: 'reset', initialState: ProductModel[] }
 
 export interface SortReducerState{
 	sort: SortEnum;
@@ -12,26 +12,29 @@ export interface SortReducerState{
 export const sortReducer = (state: SortReducerState, action: SortActions): SortReducerState => {
 	switch(action.type){
 		case SortEnum.Rating:
-			// console.log(operation);
-			// if (operation){
-			// 	return{
-			// 		sort: SortEnum.Rating,
-			// 		products: state.products.sort((a,b) => a.initialRating > b.initialRating? -1 : 1)
-			// 	}
-			// }
 			return{
 				sort: SortEnum.Rating,
-				products: state.products.sort((a,b) => a.initialRating < b.initialRating? -1 : 1)
+				products: state.products.sort((a,b) => a.initialRating > b.initialRating? -1 : 1),
 			}
 		case SortEnum.Price:
 			return{
 				sort: SortEnum.Price,
-				products: state.products.sort((a,b) => a.price > b.price? 1 : -1)
+				products: state.products.sort((a,b) => a.price > b.price? 1 : -1),
+			}
+		case SortEnum.RatingAscending:
+			return{
+				sort: SortEnum.Rating,
+				products: state.products.sort((a,b) => a.initialRating < b.initialRating? -1 : 1),
+			}
+		case SortEnum.PriceAscending:
+			return{
+				sort: SortEnum.Price,
+				products: state.products.sort((a,b) => a.price < b.price? 1 : -1),
 			}
 		case 'reset':
 			return{
 				sort: SortEnum.Price,
-				products: action.initialState
+				products: action.initialState,
 			}
 		default:
 			throw new Error('Неверный тип сортировки');

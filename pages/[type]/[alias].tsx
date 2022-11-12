@@ -52,9 +52,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<TopPageProps> = async ({
-  params,
-}: GetStaticPropsContext<ParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) {
     return {
       notFound: true,
@@ -76,10 +74,8 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({
         notFound: true,
       };
     }
-    const { data: page } = await axios.get<TopPageModel>(API.topPage.byAlias + params.alias
-    );
-    const { data: products } = await axios.post<ProductModel[]>(API.product.find,
-      {
+    const { data: page } = await axios.get<TopPageModel>(API.topPage.byAlias + params.alias);
+    const { data: products } = await axios.post<ProductModel[]>(API.product.find, {
         category: page.category,
         limit: 10,
       }

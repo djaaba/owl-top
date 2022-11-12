@@ -40,7 +40,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 				initial='closed'
 				animate={isOpened? 'opened' : 'closed'}
 			>
-				<Sidebar/>
+				<Sidebar style={{display: 'grid'}}/>
 				<ButtonIcon className={cn(styles.menuClose, styles.button)} appearance="white" icon='CloseIcon' onClick={() => setIsOpened(false)}/>
 			</motion.div>
 		</header>

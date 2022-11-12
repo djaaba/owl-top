@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 765px) {
-	.sidebar {
-		display: none !important;
+	.displayNone {
+		display: none;
 	}
 }

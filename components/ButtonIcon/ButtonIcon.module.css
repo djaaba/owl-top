@@ -1,8 +1,4 @@
 .button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
 	cursor: pointer;
 
 	border-radius: 10px;
@@ -13,6 +9,10 @@
 
 .primary {
 	background-color: var(--primary);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .primary svg * {
