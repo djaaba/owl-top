@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [owl-top](https://owl-top.netlify.app/courses/financial-analytics) – онлайн-каталог IT курсов 
 
-## Getting Started
+Учебный курс - создание веб-приложения онлайн-каталог IT курсов с использованием React, Typescript, Next.js
 
-First, run the development server:
+**Цели:**
 
-```bash
-npm run dev
-# or
-yarn dev
+- Поработать с React
+- Поработать с React Router
+- Научиться строить базовую структуру приложения
+- Поработать с API запросами
+- Поработать с Next
+
+**Что я улучшил в этом продукте?**
+- Починил useEffect, чтобы боковое меню переключалось на категории(раньше работала только 1 категория)
+- Починил систему поиска, изначально она не работала в этом курсе
+- Добавил возможность фильтрации по цене и рейтингу курсов в подкатегориях
+- Добавил фикс адаптации для телефонов
+
+## Быстрый старт
+
+#### `npm i express` – установить зависимости проекта
+
+#### `npm run start` – запуск devServer на http://localhost:3000/
+
+## Скрипты
+
+#### `npm run start` – запуск devServer на http://localhost:3000/
+
+#### `npm run build` – production сборка проекта
+
+## Используемые библиотеки
+
+- [date-fns](https://github.com/date-fns/date-fns)
+- [next.js](https://github.com/vercel/next.js/)
+- [react-dom](https://github.com/facebook/react/tree/main/packages/react-dom)
+- [framer-motion](https://github.com/framer/motion)
+- [sharp](https://github.com/lovell/sharp)
+- [axios](https://github.com/axios/axios)
+
+### Структура проекта
+
 ```
+├── components/                  # Папка с используемыми элементами
+│   ├── ...                      # UI-kit для приложения
+│   └── index.ts                 # Файл экспорта всех компонентов UI-kit
+├── context/                     # Контексты приложения
+├── helpers/                     # Папка с вспомогательными функциями и объектами приложения
+├── hooks/                       # Папка с пользовательскими хуками приложения
+├── interfaces/                  # Папка с интерфейсами приложения
+├── Layout/                      # Папка с повторяющейся разметкой страницы для роутинга
+├── page-components/             # Папка с компонентом страницы
+├── pages/                       # Папка со страницами приложения
+├── public/                      # Папка с HTML, определяющим шаблон приложения
+├── styles/                      # Стили приложения
+    └── global.css/              # Файл глобальных стилей приложения
+├── .env                             # Переменные окружения для приложения
+├── .eslintrc                        # Настройки линтера
+├── api.json                         # Json с данными API(не используется)
+├── api2.json                        # Json с данными API(не используется)
+├── .next.config.js                  # Конфигурации next
+├── .next-env.d.ts                   # Настройки окружения next
+├── .gitignore                       # Список исключённых файлов из Git
+├── package.json                     # Список модулей и прочей информации
+├── README.md                        # Документация приложения
+└── tsconfig.json                    # Параметры компилятора TypeScript
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
